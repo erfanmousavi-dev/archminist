@@ -25,19 +25,27 @@ And please note that this is a work in progress and I will try to make it better
 
 1) Clone the repository:
 
+```bash
 git clone https://github.com/erfanmousavi-dev/archminist.git
+```
 
 2) Enter the directory:
 
+```bash
 cd archminist
+```
 
 3) Make the script executable:
 
+```bash
 chmod +x main.sh
+```
 
 4) Run the script as a normal user:
 
+```bash
 ./main.sh
+```
 
 (Do NOT run the script as root or with sudo.)
 
