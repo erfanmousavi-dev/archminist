@@ -6,8 +6,7 @@ ArchMinist is a simple and minimalist Hyprland setup for Arch Linux that keeps e
 
 Here are some screenshots of the setup:
 
-![Screenshot 1](screenshots/screenshot_1.png)
-![Screenshot 2](screenshots/screenshot_2.png)
+![Screenshot 1](screenshots/screenshot_1.png) ![Screenshot 2](screenshots/screenshot_2.png)
 
 ## Requirements
 
@@ -40,4 +39,6 @@ chmod +x main.sh
 ./main.sh
 
 (Do NOT run the script as root or with sudo.)
+
+
 If you liked the setup, feel free to give the project a ⭐ on GitHub :)
