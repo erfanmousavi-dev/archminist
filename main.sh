@@ -23,46 +23,27 @@ EOF
 
 install_dotfiles(){
     
-    # Updating The System
-   
-    sudo pacman -Syu --noconfirm
+       PACKAGES=(
+        xorg-server xorg-xwayland hyprland hypridle hyprlock hyprpaper hyprsunset waybar
+        noto-fonts otf-font-awesome swaync bluez-utils bluez blueman pipewire pavucontrol
+        pipewire-pulse pipewire-alsa pipewire-jack wireplumber git base-devel brightnessctl
+        wofi power-profiles-daemon thunar ly networkmanager network-manager-applet
+        xdg-desktop-portal-hyprland hyprpolkitagent zsh kitty
+    )
 
-    # Installing Packages
-   
-    sudo pacman -S \
-    xorg-server \
-    xorg-xwayland \
-    hyprland \
-    hypridle \
-    hyprlock \
-    hyprpaper \
-    hyprsunset \
-    waybar \
-    noto-fonts \
-    otf-font-awesome \
-    swaync \
-    bluez-utils \
-    bluez \
-    blueman \
-    pipewire \
-    pavucontrol \
-    pipewire-pulse \
-    pipewire-alsa \
-    pipewire-jack \
-    wireplumber \
-    git \
-    base-devel \
-    brightnessctl \
-    wofi \
-    power-profiles-daemon \
-    thunar \
-    ly \
-    networkmanager \
-    network-manager-applet \
-    xdg-desktop-portal-hyprland \
-    hyprpolkitagent \
-    zsh \
-    kitty --noconfirm
+    while true; do
+        echo ">>> Installing packages..."
+        sudo pacman -Syu --noconfirm
+
+        if sudo pacman -S --noconfirm "${PACKAGES[@]}"; then
+            echo ">>> Packages installed successfully!"
+            break
+        else
+            echo "!!! Package installation failed (Probably no internet)"
+            echo ">>> Retrying in 5 seconds..."
+            sleep 5
+        fi
+    done
 
     # Installing Yay
 
@@ -85,7 +66,9 @@ install_dotfiles(){
 
     # Installing oh-my-zsh
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    export RUNZSH=no
+    export CHSH=no
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
     # Ending 
 
