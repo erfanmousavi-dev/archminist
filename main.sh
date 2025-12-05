@@ -112,8 +112,10 @@ while true;do
 #                                                                                               
 #      
 EOF
+    echo ""
     echo "1) Install DotFiles"
     echo "2) Exit"
+    echo ""
     echo -n "===> Select An Option : "
     read choice
 
