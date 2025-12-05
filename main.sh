@@ -45,6 +45,7 @@ install_dotfiles(){
     bluez \
     blueman \
     pipewire \
+    pavucontrol \
     pipewire-pulse \
     pipewire-alsa \
     pipewire-jack \
@@ -58,6 +59,9 @@ install_dotfiles(){
     ly \
     networkmanager \
     network-manager-applet \
+    xdg-desktop-portal-hyprland \
+    hyprpolkitagent \
+    zsh \
     kitty --noconfirm
 
     # Installing Yay
@@ -79,10 +83,15 @@ install_dotfiles(){
     cp -r config_files/* /home/$USER/.config/
     chown -R $USER:$USER /home/$USER/.config/
 
+    # Installing oh-my-zsh
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
     # Ending 
 
     clear
     echo "The Installation Is Completed !"
+    sleep 3
 
 }
 
