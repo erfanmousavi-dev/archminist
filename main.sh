@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-## Clears and Displays My Beautiful ASCII Art :)
+# Clears The Screen And Displays My Beautiful Ascii Art :)
 
 clear
 cat << "EOF"
-
 #      /$$$$$$                      /$$       /$$      /$$ /$$           /$$             /$$    
 #     /$$__  $$                    | $$      | $$$    /$$$|__/          |__/            | $$    
 #    | $$  \ $$  /$$$$$$   /$$$$$$$| $$$$$$$ | $$$$  /$$$$ /$$ /$$$$$$$  /$$  /$$$$$$$ /$$$$$$  
@@ -17,34 +16,56 @@ cat << "EOF"
 #                                                                                               
 #                                   github : erfanmousaviam-dev
 #                  
-#            If you liked the install script I could use your star on the project :)                                                                                                                                                                                                                                                                                                        
-
+#               If you liked the install script I could use your star on the project :)                                                                                                                                                                                                                                                                                                        
 EOF
+
+# A Function For Installing Dotfiles Submenu
 
 install_dotfiles(){
     
-    echo "Now Installing Packages Needed For The Rice :)"
-    sleep 2
+    # Updating The System
+   
     sudo pacman -Syu --noconfirm
-    sudo pacman -S xorg-server xorg-xwayland ttf-dejavu noto-fonts waybar hyprland hypridle hyprlock hyprpaper hyprsunset otf-font-awesome materia-gtk-theme bluez-utils bluez blueman swaync gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb tumbler unrar unzip git base-devel xf86-video-intel brightnessctl papirus-icon-theme pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber thunar-volman wofi power-profiles-daemon man-db thunar ly networkmanager network-manager-applet nwg-look kitty
+
+    # Installing Packages
+   
+    sudo pacman -S xorg-server xorg-wayland hyprland hypridle hyprlock hyprpaper hyprsunset waybar ttf-dejavu noto-fonts otf-font-awesome materia-gtk-theme swaync
+    sudo pacman -S bluez-utils bluez blueman gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
+    sudo pacman -S tumbler unrar unzip git base-devel xf86-video-intel brightnessctl papirus-icon-theme thunar-volman wofi power-profiles-daemon man-db thunar
+    sudo pacman -S ly networkmanager network-manager-applet nwg-look kitty
+
+    # Installing Yay
+
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
     cd ..
+    
+    # Enabling Services
+    
     sudo systemctl enable networkmanager
     sudo systemctl enable bluetooth
     sudo systemctl enable ly
-    cp -r config_files/* /home/$USER/.config/
+    
+    # Copying Dotfiles To Home Folder
+    
     USER=$(whoami)
+    cp -r config_files/* /home/$USER/.config/
     chown -R $USER:$USER /home/$USER/.config/
+
+    # Ending 
+
+    clear
+    echo "The Installation Is Completed !"
 
 }
 
 
+# Shows The Main Menu Of The Script
+
 while true;do
     clear
     cat << "EOF"
-
 #      /$$$$$$                      /$$       /$$      /$$ /$$           /$$             /$$    
 #     /$$__  $$                    | $$      | $$$    /$$$|__/          |__/            | $$    
 #    | $$  \ $$  /$$$$$$   /$$$$$$$| $$$$$$$ | $$$$  /$$$$ /$$ /$$$$$$$  /$$  /$$$$$$$ /$$$$$$  
