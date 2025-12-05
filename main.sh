@@ -69,7 +69,7 @@ install_dotfiles(){
     
     # Enabling Services
     
-    sudo systemctl enable networkmanager
+    sudo systemctl enable NetworkManager
     sudo systemctl enable bluetooth
     sudo systemctl enable ly
     
