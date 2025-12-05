@@ -29,10 +29,36 @@ install_dotfiles(){
 
     # Installing Packages
    
-    sudo pacman -S xorg-server xorg-wayland hyprland hypridle hyprlock hyprpaper hyprsunset waybar ttf-dejavu noto-fonts otf-font-awesome materia-gtk-theme swaync --noconfirm
-    sudo pacman -S bluez-utils bluez blueman gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber --noconfirm
-    sudo pacman -S tumbler unrar unzip git base-devel xf86-video-intel brightnessctl papirus-icon-theme thunar-volman wofi power-profiles-daemon man-db thunar --noconfirm
-    sudo pacman -S ly networkmanager network-manager-applet nwg-look kitty
+    sudo pacman -S \
+    xorg-server \
+    xorg-xwayland \
+    hyprland \
+    hypridle \
+    hyprlock \
+    hyprpaper \
+    hyprsunset \
+    waybar \
+    noto-fonts \
+    otf-font-awesome \
+    swaync \
+    bluez-utils \
+    bluez \
+    blueman \
+    pipewire \
+    pipewire-pulse \
+    pipewire-alsa \
+    pipewire-jack \
+    wireplumber \
+    git \
+    base-devel \
+    brightnessctl \
+    wofi \
+    power-profiles-daemon \
+    thunar \
+    ly \
+    networkmanager \
+    network-manager-applet \
+    kitty --noconfirm
 
     # Installing Yay
 
