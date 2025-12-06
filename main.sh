@@ -64,17 +64,17 @@ install_dotfiles(){
     cp -r config_files/* /home/$USER/.config/
     chown -R $USER:$USER /home/$USER/.config/
 
-    # Installing oh-my-zsh
-
-    export RUNZSH=no
-    export CHSH=no
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
     # Ending 
 
     clear
     echo "The Installation Is Completed !"
+    echo "Now We Will Install oh-my-zsh"
+    echo "After that you can reboot to your new system."
     sleep 3
+
+    # Installing oh-my-zsh
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 }
 
