@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Clears The Screen And Displays My Beautiful Ascii Art :)
 
 clear
