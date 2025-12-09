@@ -16,7 +16,8 @@
         "backlight",
         "battery",
         "tray",
-        "power-profiles-daemon"
+        "power-profiles-daemon",
+	    "custom/powermenu"
     ],
  
     "idle_inhibitor": {
@@ -95,4 +96,10 @@
         },
         "on-click": "pavucontrol"
     },
+    "custom/powermenu": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "bash $HOME/.config/hypr/scripts/PowerMenu.sh",
+    "interval": 86400
+	},
 }
